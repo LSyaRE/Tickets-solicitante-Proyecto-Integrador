@@ -15,6 +15,7 @@ public class Carrera {
     @Id
     private long id;
     private String nombre;
+    private String apellido;
     private Timestamp updated;
     private Timestamp deleted;
     private boolean enabled;
