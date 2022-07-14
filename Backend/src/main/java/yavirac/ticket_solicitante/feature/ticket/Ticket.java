@@ -14,7 +14,7 @@ import lombok.Data;
 public class Ticket {
 
     @Id
-    private long Id;
+    private long id;
     @Column("usuario_solicitante")
     private int usuarioSolicitante;
     private int carrera;
