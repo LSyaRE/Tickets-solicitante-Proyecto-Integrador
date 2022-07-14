@@ -1,12 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
-<<<<<<< HEAD
-<<<<<<< HEAD
 @tailwind utilities;
-=======
-@tailwind utilities;
->>>>>>> origin/feature_usuario
-=======
-@tailwind utilities;
->>>>>>> origin/feature_ticket
+
+

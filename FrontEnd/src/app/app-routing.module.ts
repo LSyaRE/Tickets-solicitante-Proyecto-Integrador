@@ -1,26 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
+import { CarreraComponent } from './carrera/carrera.component';
+import { TicketComponent } from './ticket/ticket.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 
 const routes: Routes = [
   {path: 'usuario', component:UsuarioComponent},
-  {path: 'usuario/:id', component:UsuarioComponent}
-=======
-import { TicketComponent } from './ticket/ticket.component';
-
-const routes: Routes = [
+  {path: 'usuario/:id', component:UsuarioComponent},
+  {path: 'carrera', component:CarreraComponent},
+  {path: 'carrera/:id', component:CarreraComponent},
   {path: 'ticket', component:TicketComponent},
-  {path: 'ticket/:id', component:TicketComponent}
->>>>>>> origin/feature_ticket
+  {path: 'ticket/:id', component:TicketComponent},
+  {path: 'respuesta', component:UsuarioComponent},
+  {path: 'respuesta/:id', component:UsuarioComponent},
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-<<<<<<< HEAD
 export class AppRoutingModule { }
-=======
-export class AppRoutingModule { }
->>>>>>> origin/feature_ticket
