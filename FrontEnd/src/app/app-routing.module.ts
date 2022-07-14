@@ -11,9 +11,8 @@ const routes: Routes = [
   {path: 'carrera/:id', component:CarreraComponent},
   {path: 'ticket', component:TicketComponent},
   {path: 'ticket/:id', component:TicketComponent},
-  {path: 'respuesta', component:UsuarioComponent},
-  {path: 'respuesta/:id', component:UsuarioComponent},
-
+  {path: 'respuesta', component:TicketComponent},
+  {path: 'respuesta/:id', component:TicketComponent},
 ];
 
 @NgModule({

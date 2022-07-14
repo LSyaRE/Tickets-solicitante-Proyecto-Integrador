@@ -9,7 +9,6 @@ import { RespuestaComponent } from './respuesta/respuesta.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
