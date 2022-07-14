@@ -1,6 +1,7 @@
-package yavirac.ticket_solicitante.features.tickets_carrera;
+package yavirac.ticket_solicitante.feature.ticket;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,42 +12,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.http.HttpStatus;
 
 @RestController
-@RequestMapping("/api/carrera")
+@RequestMapping("/api/ticket")
 @CrossOrigin({"*"})
-public class CarreraController {
+public class TicketController {
     
     @Autowired
-    CarreraService carreraService;
+    TicketService ticketService;
 
-    //CRUD
 
     //Create
     @PostMapping("/save")
-    public Carrera save(@RequestBody Carrera carrera) {
-        return carreraService.save(carrera);
+    public Ticket save(@RequestBody Ticket ticket){
+        return ticketService.save(ticket);
     }
 
     //Read
     @GetMapping("/{id}")
-    public Carrera findById(@PathVariable long id){
-        return carreraService.findById(id);
+    public Ticket findById(@PathVariable long id){
+        return ticketService.findById(id);
     }
 
     //Update
     @PutMapping("/update")
-    public Carrera update(@RequestBody Carrera carrera)
+    public Ticket update(@RequestBody Ticket ticket)
     {
-        return carreraService.save(carrera);
+        return ticketService.save(ticket);
     }
 
     //Delete
     @DeleteMapping("/deleteById/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable long id){
-        carreraService.deleteById(id);
+        ticketService.deleteById(id);
     }
 
 }

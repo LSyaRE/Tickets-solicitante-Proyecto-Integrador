@@ -1,4 +1,4 @@
-package yavirac.ticket_solicitante.features.tickets_carrera;
+package yavirac.ticket_solicitante.features.carrera;
 
 import java.sql.Timestamp;
 
