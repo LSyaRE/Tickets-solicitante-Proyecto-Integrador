@@ -7,25 +7,25 @@ import org.springframework.stereotype.Service;
 public class CarreraService {
 
     @Autowired
-    CarreraRepository tickets_carreraRepository;
+    CarreraRepository carreraRepository;
 
     //CRUD = Create, Read, Update, Delete
 
-    public Carrera save(Carrera tickets_carrera){
+    public Carrera save(Carrera carrera){
 
-        return tickets_carreraRepository.save(tickets_carrera);
+        return carreraRepository.save(carrera);
     }
 
     public Carrera findById(long id){
-        return tickets_carreraRepository.findById(id).orElse(new Carrera());
+        return carreraRepository.findById(id).orElse(new Carrera());
     }
 
-    public Carrera update(Carrera tickets_carrera){
-        return tickets_carreraRepository.save(tickets_carrera);
+    public Carrera update(Carrera carrera){
+        return carreraRepository.save(carrera);
     }
 
     public void deleteById(long id){
-        tickets_carreraRepository.deleteById(id);
+        carreraRepository.deleteById(id);
     }
     
 }

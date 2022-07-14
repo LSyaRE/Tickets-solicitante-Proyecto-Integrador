@@ -1,6 +1,6 @@
 package yavirac.ticket_solicitante.features.tickets_carrera;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
@@ -13,14 +13,14 @@ import lombok.Data;
 public class Carrera {
 
     @Id
-    @Column("tipo_carrera")
-    private long Id;
-    private String name;
-    private String tipoCarrera;
+    private long id;
+    private String nombre;
     private Timestamp updated;
     private Timestamp deleted;
     private boolean enabled;
     private boolean archived;
+    @Column("tipo_carrera")
+    private String tipoCarrera;
 
 
 }
