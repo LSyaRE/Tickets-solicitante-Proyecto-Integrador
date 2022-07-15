@@ -99,10 +99,6 @@
     }
   },
   "cli": {
-<<<<<<< HEAD
-    "analytics": "07c905e0-3794-4f8f-828b-6c42f90df281"
-=======
     "analytics": false
->>>>>>> origin/feature_ticket
   }
 }
