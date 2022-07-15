@@ -2,7 +2,7 @@
     <div class="card shadow-2xl shadow-black">
       <div class="card-body">
         <div class="card-title">
-          Tickets <span class="text-primary">Carrera</span>
+          Tickets <span class="text-primary  font-extrabold text-indigo-500">Carrera</span>
         </div>
         <div class="divider"> </div>
         <div class="grid">
@@ -34,15 +34,15 @@
   
     <div class="divider"> </div>
   
-    <div class="card card-compact shadow-2xl shadow-black bg-red-300 ">
+    <div class="card card-compact shadow-2xl shadow-black bg-indigo-700 ">
       <div class="card-body">
-        <div class="card-title">Precaución</div>
-        <p>Si elimina el registro no prodrá recuperarlo</p>
+        <div class="card-title text-purple-100 " >Precaución</div>
+        <p  class="text-purple-100 ">Si elimina el registro no prodrá recuperarlo</p>
         <div class="card-actions" >
           <div class="form-control">
             <label class="label cursor-pointer justify-start">
               <input type="checkbox" class="toggle toggle-primary" [(ngModel)]="currentEntity.archived" />
-              <span class="label-text ml-2">Achivar</span>
+              <span class="label-text ml-2 text-purple-100 ">Achivar</span>
             </label>
           </div>
           <label for="my-modal-6" class="btn modal-button btn-secondary btn-xs">Eliminar</label>
