@@ -4,26 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CarreraComponent } from './carrera/carrera.component';
-import { RespuestaComponent } from './respuesta/respuesta.component';
-import { TicketComponent } from './ticket/ticket.component';
-import { UsuarioComponent } from './usuario/usuario.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { FeaturesModule } from './features/features.module';
+import { LayoutModule } from './layout/layout.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsuarioComponent,
-    TicketComponent,
-    CarreraComponent,
-    RespuestaComponent,
-    NavbarComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FeaturesModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
