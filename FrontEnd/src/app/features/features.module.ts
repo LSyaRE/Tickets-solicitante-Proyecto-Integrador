@@ -4,18 +4,22 @@ import { CommonModule } from '@angular/common';
 import { FeaturesRoutingModule } from './features-routing.module';
 import { LayoutRoutingModule } from '../layout/layout-routing.module';
 import { FormsModule } from '@angular/forms';
-import { CarreraComponent } from './carrera/carrera.component';
+import { CarreraFormComponent } from './carrera/form/carrera.form.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { RespuestaComponent } from './respuesta/respuesta.component';
+import { CarreraListComponent } from './carrera/list/carrera-list.component';
+import { CarreraToolbarComponent } from './carrera/toolbar/carrera-toolbar.component';
 
 
 @NgModule({
   declarations: [
-    CarreraComponent,
+    CarreraFormComponent,
     TicketComponent,
     UsuarioComponent,
-    RespuestaComponent
+    RespuestaComponent,
+    CarreraListComponent,
+    CarreraToolbarComponent
   ],
   imports: [
     CommonModule,
