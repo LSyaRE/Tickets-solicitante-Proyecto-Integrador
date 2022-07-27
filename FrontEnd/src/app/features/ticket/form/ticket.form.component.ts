@@ -4,10 +4,10 @@ import { Ticket } from '../ticket';
 import { TicketService } from '../ticket.service';
 
 @Component({
-  selector: 'app-ticket',
-  templateUrl: './ticket.component.html'
+  selector: 'app-ticket-form',
+  templateUrl: './ticket.form.component.html'
 })
-export class TicketComponent implements OnInit {
+export class TicketFormComponent implements OnInit {
 
   constructor(
     private ticketService: TicketService,

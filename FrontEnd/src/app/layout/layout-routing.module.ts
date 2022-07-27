@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TicketComponent } from '../features/ticket/form/ticket.component';
+import { TicketFormComponent } from '../features/ticket/form/ticket.form.component';
+import { TicketListComponent } from '../features/ticket/list/ticket-list.component';
 import { CarreraComponent } from '../features/carrera/carrera.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
@@ -11,7 +12,10 @@ const routes: Routes = [
       {path: '', component:DashboardComponent},
       {path: 'dashboard', component:DashboardComponent},
       {path:'carrera-form',component:CarreraComponent},
-      {path:'tiket',component:TicketComponent}
+      {path:'ticket',component:TicketFormComponent},
+      {path: 'ticket-form', component:TicketFormComponent},
+      {path: 'ticket-form/:id', component:TicketFormComponent},
+      {path: 'ticket-list', component:TicketListComponent},
     ]
   }
 ];

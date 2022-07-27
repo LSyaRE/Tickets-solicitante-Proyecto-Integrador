@@ -29,5 +29,11 @@ export class TicketService {
   public deleteById(id: number): Observable<Ticket>{
     return this.http.delete<Ticket>(this.url+"/deleteById/"+id, this.httpOptions);
   }
+  public findAll(): Observable<Ticket[]>{
+    return this.http.get<Ticket[]>(this.url+"/findAll", this.httpOptions);
+  }
 
+  public findByName(term: string): Observable<Ticket[]>{
+    return this.http.get<Ticket[]>(this.url+"/findByName/"+term, this.httpOptions)
+  }  
 }
