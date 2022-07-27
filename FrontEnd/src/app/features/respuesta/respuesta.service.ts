@@ -29,4 +29,12 @@ export class RespuestaService {
     return this.http.delete<Respuesta>(this.url+"/deleteById/"+id, this.httpOptions);
   }
 
+  public findAll(): Observable<Respuesta[]>{
+    return this.http.get<Respuesta[]>(this.url+"/findAll", this.httpOptions);
+  }
+
+  public findByName(term: string): Observable<Respuesta[]>{
+    return this.http.get<Respuesta[]>(this.url+"/findByName/"+term, this.httpOptions)
+  }  
+
 }

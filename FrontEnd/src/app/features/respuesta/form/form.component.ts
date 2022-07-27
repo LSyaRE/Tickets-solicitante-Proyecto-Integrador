@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { RespuestaService } from '../respuesta.service';
+import { Respuesta } from '../respuesta';
 import { ActivatedRoute } from '@angular/router';
-import { Respuesta } from './respuesta';
-import { RespuestaService } from './respuesta.service';
 
 @Component({
-  selector: 'app-respuesta',
-  templateUrl: './respuesta.component.html',
-  styleUrls: ['./respuesta.component.css']
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  
 })
-export class RespuestaComponent implements OnInit {
+export class FormComponent implements OnInit {
 
   constructor( private respuestaService: RespuestaService,
     private activatedRoute: ActivatedRoute) { }

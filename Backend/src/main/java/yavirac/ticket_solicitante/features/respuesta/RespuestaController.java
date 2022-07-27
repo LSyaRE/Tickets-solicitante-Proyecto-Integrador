@@ -1,5 +1,7 @@
 package yavirac.ticket_solicitante.features.respuesta;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -47,5 +49,16 @@ public class RespuestaController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable long id){
         respuestaService.deleteById(id);
+    }
+
+
+    @GetMapping("/findAll")
+    public List<Respuesta> findAll(){
+        return respuestaService.findAll();
+    }
+
+    @GetMapping("/findByName/{term}")
+    public List<Respuesta> findByName(@PathVariable String term){
+        return respuestaService.findByName(term);
     }
 }

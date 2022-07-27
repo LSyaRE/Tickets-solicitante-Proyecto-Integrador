@@ -1,9 +1,12 @@
 package yavirac.ticket_solicitante.features.respuesta;
 
 import java.sql.Timestamp;
+import java.util.Set;
+import java.util.HashSet;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
@@ -22,6 +25,9 @@ public class Respuesta {
     @Column("id_ticket")
     private int idTicket;
     private boolean resuelto;
+
+    @MappedCollection(idColumn = "id")
+    private Set<RespuestaAuthority> authorities = new HashSet<>();
 
 
 }
