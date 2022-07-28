@@ -24,9 +24,9 @@ export class TicketListComponent implements OnInit {
     )
   }
 
-  public findByName(term: string): void{
+  public findByJornada(term: string): void{
     if (term.length>=2){
-      this.ticketService.findByName(term).subscribe(
+      this.ticketService.findByJornada(term).subscribe(
         (response) => this.ticketList = response
       )
     }
