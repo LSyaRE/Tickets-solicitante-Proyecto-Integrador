@@ -1,5 +1,7 @@
 package yavirac.ticket_solicitante.features.usuario;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -48,4 +50,10 @@ public class UsuarioController {
     public void delete(@PathVariable long id){
         usuarioService.deleteById(id);
     }
+
+    @GetMapping("/findAll")
+    public List<Usuario> findAll(){
+        return usuarioService.findAll();
+    }
+
 }
