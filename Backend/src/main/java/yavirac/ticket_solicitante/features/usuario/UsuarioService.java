@@ -34,4 +34,8 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
+    public List<Usuario> findByNombre(String term){
+        return usuarioRepository.findByNombreLikeIgnoreCase(term+"%");
+    }
+
 }

@@ -56,4 +56,9 @@ public class UsuarioController {
         return usuarioService.findAll();
     }
 
+    @GetMapping("/findByNombre/{term}")
+    public List<Usuario> findByNombre(@PathVariable String term){
+        return usuarioService.findByNombre(term);
+    }
+
 }
