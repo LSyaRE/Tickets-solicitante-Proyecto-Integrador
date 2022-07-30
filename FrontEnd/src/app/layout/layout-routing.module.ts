@@ -5,6 +5,8 @@ import { TicketListComponent } from '../features/ticket/list/ticket-list.compone
 import { CarreraComponent } from '../features/carrera/carrera.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
+import { UsuarioFormComponent } from '../features/usuario/form/usuario.form.component';
+import { UsuarioListComponent } from '../features/usuario/list/usuario-list.component';
 
 const routes: Routes = [
   {path: '', component:MainComponent ,
@@ -16,6 +18,10 @@ const routes: Routes = [
       {path: 'ticket-form', component:TicketFormComponent},
       {path: 'ticket-form/:id', component:TicketFormComponent},
       {path: 'ticket-list', component:TicketListComponent},
+      {path: 'usuario-form', component: UsuarioFormComponent},
+      {path: 'usuario-form/:id', component: UsuarioFormComponent},
+      {path: 'usuario-list', component: UsuarioListComponent},
+
     ]
   }
 ];

@@ -8,8 +8,10 @@ import { CarreraComponent } from './carrera/carrera.component';
 import { TicketFormComponent } from './ticket/form/ticket.form.component';
 import { TicketListComponent } from './ticket/list/ticket-list.component';
 import { TicketToolbarComponent } from './ticket/toolbar/ticket-toolbar.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioFormComponent } from './usuario/form/usuario.form.component';
 import { RespuestaComponent } from './respuesta/respuesta.component';
+import { UsuarioListComponent } from './usuario/list/usuario-list.component';
+import { UsuarioToolbarComponent } from './usuario/toolbar/usuario-toolbar.component';
 
 
 @NgModule({
@@ -18,8 +20,10 @@ import { RespuestaComponent } from './respuesta/respuesta.component';
     TicketFormComponent,
     TicketListComponent,
     TicketToolbarComponent,
-    UsuarioComponent,
-    RespuestaComponent
+    UsuarioFormComponent,
+    RespuestaComponent,
+    UsuarioListComponent,
+    UsuarioToolbarComponent
   ],
   imports: [
     CommonModule,

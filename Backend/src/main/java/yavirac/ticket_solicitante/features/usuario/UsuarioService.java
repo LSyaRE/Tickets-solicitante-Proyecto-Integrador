@@ -1,5 +1,7 @@
 package yavirac.ticket_solicitante.features.usuario;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +28,12 @@ public class UsuarioService {
 
     public void deleteById(long id){
         usuarioRepository.deleteById(id);
+    }
+    
+    public List<Usuario> findAll(){
+        return usuarioRepository.findAll();
+    }
+    public List<Usuario> findByNombre(String term){
+        return usuarioRepository.findByNombreLikeIgnoreCase(term+"%");
     }
 }
