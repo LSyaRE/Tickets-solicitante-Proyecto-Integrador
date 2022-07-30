@@ -11,6 +11,7 @@ import { RespuestaComponent } from './respuesta/respuesta.component';
 import { CarreraListComponent } from './carrera/list/carrera-list.component';
 import { CarreraToolbarComponent } from './carrera/toolbar/carrera-toolbar.component';
 import { UsuarioComboboxComponent } from './usuario/usuario-combobox.component';
+import { UsuarioSearchComponent } from './usuario/usuario-search/usuario-search.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { UsuarioComboboxComponent } from './usuario/usuario-combobox.component';
     CarreraListComponent,
     CarreraToolbarComponent,
     UsuarioComboboxComponent,
+    UsuarioSearchComponent,
   ],
   imports: [
     CommonModule,
