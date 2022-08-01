@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from '../usuario';
 import { UsuarioService } from '../usuario.service';
 
@@ -11,7 +11,8 @@ export class UsuarioFormComponent implements OnInit {
 
   constructor(
     private usuarioService: UsuarioService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
   currentEntity: Usuario = {
@@ -19,7 +20,8 @@ export class UsuarioFormComponent implements OnInit {
     nombre: "",
     correo:"",
     password:"",
-    enabled: true
+    enabled: true,
+    carreraId: 0
   };
 
   ngOnInit(): void {
@@ -41,8 +43,10 @@ export class UsuarioFormComponent implements OnInit {
           nombre: "",
           correo:"",
           password:"",
-          enabled: true
+          enabled: true,
+          carreraId: 0
         };
+        this.router.navigate(['/layout/usuario-list']);
       }
     )
   }
@@ -65,7 +69,8 @@ export class UsuarioFormComponent implements OnInit {
           nombre: "",
           correo:"",
           password:"",
-          enabled: true
+          enabled: true,
+          carreraId: 0
         };
       }
     )

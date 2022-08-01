@@ -14,7 +14,7 @@ export class CarreraComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) { }
 
-  currentEntity: carrera = 
+  currentEntity: carrera =
   {
           id: 0,
           nombre: "",
@@ -40,7 +40,7 @@ export class CarreraComponent implements OnInit {
     this.carreraService.save(this.currentEntity)
     .subscribe(
       () => {
-        this.currentEntity = 
+        this.currentEntity =
         {
           id: 0,
           nombre: "",

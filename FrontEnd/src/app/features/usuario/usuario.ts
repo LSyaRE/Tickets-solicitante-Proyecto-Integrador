@@ -3,5 +3,6 @@ export interface Usuario {
   nombre: string,
   correo: string,
   password: string,
-  enabled: boolean
+  enabled: boolean,
+  carreraId: number
 }

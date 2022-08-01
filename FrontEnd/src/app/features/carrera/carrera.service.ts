@@ -30,4 +30,8 @@ export class carreraService {
     return this.http.delete<carrera>(this.url+"/deleteById/"+id, this.httpOptions);
   }
 
+  public findAll(): Observable<carrera[]>{
+    return this.http.get<carrera[]>(this.url+"/findAll", this.httpOptions);
+  }
+
 }

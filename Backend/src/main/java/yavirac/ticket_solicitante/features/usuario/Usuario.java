@@ -22,4 +22,5 @@ public class Usuario {
   private Timestamp deleted;
   private boolean enabled;
   private boolean archived;
+  private Long carreraId;
 }
