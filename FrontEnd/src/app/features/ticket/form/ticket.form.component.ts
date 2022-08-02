@@ -16,16 +16,13 @@ export class TicketFormComponent implements OnInit {
 
   currentEntity: Ticket = 
   {
-    id:0,
-          
-          
+    id:0,    
     enabled: true,
     updated: new Date(),
-      
-    
     description:"",
     jornada:"",
-   
+    carreraId:0,
+    respuestas: []
   };
 
   ngOnInit(): void {
@@ -46,15 +43,12 @@ export class TicketFormComponent implements OnInit {
         this.currentEntity = 
         {
           id:0,
-          
-          
           enabled: true,
           updated: new Date(),
-            
-          
           description:"",
           jornada:"",
-      
+          carreraId:0,
+          respuestas: []
         };
       }
     )
@@ -75,6 +69,14 @@ export class TicketFormComponent implements OnInit {
        
       }
     )
+  }
+
+  removeRespuesta(id: number):void {
+
+    this.currentEntity.respuestas =
+    this.currentEntity.respuestas.filter(
+      (item) => item.id != id 
+    );
   }
 
 }

@@ -29,4 +29,7 @@ export class UsuarioService {
   public deleteById(id: number): Observable<Usuario>{
     return this.http.delete<Usuario>(this.url+"/deleteById/"+id, this.httpOptions);
   }
+  public findAll(): Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.url+"/findAll", this.httpOptions);
+  }
 }

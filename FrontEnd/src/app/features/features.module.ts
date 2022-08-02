@@ -10,8 +10,8 @@ import { TicketListComponent } from './ticket/list/ticket-list.component';
 import { TicketToolbarComponent } from './ticket/toolbar/ticket-toolbar.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { RespuestaComponent } from './respuesta/respuesta.component';
-
-
+import { carreraComboboxComponent } from './carrera/carrera-combobox.component';
+import { RespuestaSearchComponent } from './respuesta/respuesta-search/respuesta-search.component';
 @NgModule({
   declarations: [
     CarreraComponent,
@@ -19,7 +19,9 @@ import { RespuestaComponent } from './respuesta/respuesta.component';
     TicketListComponent,
     TicketToolbarComponent,
     UsuarioComponent,
-    RespuestaComponent
+    RespuestaComponent,
+    carreraComboboxComponent,
+    RespuestaSearchComponent
   ],
   imports: [
     CommonModule,
