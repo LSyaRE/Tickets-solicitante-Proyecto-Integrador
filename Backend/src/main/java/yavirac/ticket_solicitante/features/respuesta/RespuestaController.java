@@ -58,7 +58,7 @@ public class RespuestaController {
     }
 
     @GetMapping("/findByName/{term}")
-    public List<Respuesta> findByName(@PathVariable String term){
+    public List<Respuesta> findByComentario(@PathVariable String term){
         return respuestaService.findByName(term);
     }
 }

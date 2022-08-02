@@ -21,4 +21,6 @@ public class Usuario {
   private Timestamp deleted;
   private boolean enabled;
   private boolean archived;
+  @Column("fk_carrera")
+  private long fkCarrera;
 }

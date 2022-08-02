@@ -34,6 +34,7 @@ public class RespuestaService {
     }
 
     public List<Respuesta> findByName(String term){
-        return respuestaRepository.findByNameLikeIgnoreCase(term+"%");
+        return respuestaRepository.findByComentarioLikeIgnoreCase(term+"%");
     }
+    
 }
