@@ -1,5 +1,7 @@
 package yavirac.ticket_solicitante.feature.ticket;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,13 @@ public class TicketService {
 
     public void deleteById(long id){
         ticketRepository.deleteById(id);
+    }
+    public List<Ticket> findAll(){
+        return ticketRepository.findAll();
+    }
+
+    public List<Ticket> findByJornada(String term){
+        return ticketRepository.findByJornadaLikeIgnoreCase(term+"%");
     }
     
 }

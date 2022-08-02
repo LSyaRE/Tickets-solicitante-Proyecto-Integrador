@@ -2,9 +2,12 @@ package yavirac.ticket_solicitante.feature.ticket;
 
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
@@ -25,5 +28,8 @@ public class Ticket {
     private String description;
     private String jornada;
     private String curso;
-    
+    private long carreraId;
+
+    @MappedCollection(idColumn = "ticket_id")
+    private Set<TicketRespuesta> respuestas = new HashSet<>();
 }

@@ -14,7 +14,7 @@ public class Usuario {
   @Id
   private long id;
   @Column("rol_id")
-  private long rolId;
+  private int rolId;
   private String nombre;
   private String correo;
   private String password;

@@ -1,5 +1,7 @@
 package yavirac.ticket_solicitante.features.respuesta;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +27,9 @@ public class RespuestaService {
 
     public void deleteById(long id){
         respuestaRepository.deleteById(id);
+    }
+
+    public List<Respuesta> findByComentario(String term){
+        return respuestaRepository.findByComentarioLikeIgnoreCase(term+"%");
     }
 }

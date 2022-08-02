@@ -1,5 +1,7 @@
 package yavirac.ticket_solicitante.features.carrera;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,10 @@ public class CarreraService {
 
     public void deleteById(long id){
         carreraRepository.deleteById(id);
+    }
+
+    public List<Carrera> findAll(){
+        return carreraRepository.findAll();
     }
     
 }
