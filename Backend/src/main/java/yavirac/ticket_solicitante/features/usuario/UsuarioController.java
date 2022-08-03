@@ -50,9 +50,16 @@ public class UsuarioController {
     public void delete(@PathVariable long id){
         usuarioService.deleteById(id);
     }
+
     @GetMapping("/findAll")
     public List<Usuario> findAll(){
         return usuarioService.findAll();
     }
   
+
+    @GetMapping("/findByNombre/{term}")
+    public List<Usuario> findByNombre(@PathVariable String term){
+        return usuarioService.findByNombre(term);
+    }
+
 }

@@ -13,6 +13,12 @@ import { RespuestaComponent } from './respuesta/respuesta.component';
 import { carreraComboboxComponent } from './carrera/carrera-combobox.component';
 import { RespuestaSearchComponent } from './respuesta/respuesta-search/respuesta-search.component';
 import { CarreraFormComponent } from './carrera/form/carrera.form.component';
+import { CarreraListComponent } from './carrera/list/carrera-list.component';
+import { CarreraToolbarComponent } from './carrera/toolbar/carrera-toolbar.component';
+import { UsuarioComboboxComponent } from './usuario/usuario-combobox.component';
+import { UsuarioSearchComponent } from './usuario/usuario-search/usuario-search.component';
+
+
 @NgModule({
   declarations: [
     CarreraFormComponent,
@@ -22,7 +28,11 @@ import { CarreraFormComponent } from './carrera/form/carrera.form.component';
     UsuarioComponent,
     RespuestaComponent,
     carreraComboboxComponent,
-    RespuestaSearchComponent
+    RespuestaSearchComponent,
+    CarreraListComponent,
+    CarreraToolbarComponent,
+    UsuarioComboboxComponent,
+    UsuarioSearchComponent,
   ],
   imports: [
     CommonModule,

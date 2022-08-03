@@ -32,4 +32,10 @@ public class UsuarioService {
     public List<Usuario> findAll(){
         return usuarioRepository.findAll();
     }
+
+
+    public List<Usuario> findByNombre(String term){
+        return usuarioRepository.findByNombreLikeIgnoreCase(term+"%");
+    }
+
 }
