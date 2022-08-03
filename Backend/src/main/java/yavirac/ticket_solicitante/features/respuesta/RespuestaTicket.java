@@ -13,7 +13,7 @@ public class RespuestaTicket {
     @Id 
     private long id;
     @Column("id_ticket")
-    private long idTicket ;
+    private Long idTicket ;
     
 
 }
