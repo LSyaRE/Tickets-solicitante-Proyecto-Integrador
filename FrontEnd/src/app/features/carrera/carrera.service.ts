@@ -32,4 +32,9 @@ export class carreraService {
   public findAll(): Observable<carrera[]>{
     return this.http.get<carrera[]>(this.url+"/findAll", this.httpOptions);
   }
+
+  public findByNombre(term: string): Observable<carrera[]>{
+    return this.http.get<carrera[]>(this.url+"/findByNombre/"+term, this.httpOptions);
+  }
+
 }

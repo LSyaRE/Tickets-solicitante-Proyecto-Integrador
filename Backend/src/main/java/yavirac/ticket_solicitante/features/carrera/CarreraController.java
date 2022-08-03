@@ -57,4 +57,9 @@ public class CarreraController {
     }
     
 
+    @GetMapping("/findByNombre/{term}")
+    public List<Carrera> findByNombre(@PathVariable String term){
+        return carreraService.findByNombre(term);
+    }
+
 }

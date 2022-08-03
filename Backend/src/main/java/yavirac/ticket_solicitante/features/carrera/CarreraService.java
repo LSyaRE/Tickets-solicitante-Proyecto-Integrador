@@ -33,5 +33,9 @@ public class CarreraService {
     public List<Carrera> findAll(){
         return carreraRepository.findAll();
     }
+
+    public List<Carrera> findByNombre(String term){
+        return carreraRepository.findByNombreLikeIgnoreCase(term+"%");
+    }
     
 }
