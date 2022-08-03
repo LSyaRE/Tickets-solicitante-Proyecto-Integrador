@@ -29,11 +29,13 @@ public class UsuarioService {
     public void deleteById(long id){
         usuarioRepository.deleteById(id);
     }
-    
     public List<Usuario> findAll(){
         return usuarioRepository.findAll();
     }
+
+
     public List<Usuario> findByNombre(String term){
         return usuarioRepository.findByNombreLikeIgnoreCase(term+"%");
     }
+
 }

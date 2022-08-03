@@ -29,9 +29,12 @@ export class carreraService {
   public deleteById(id: number): Observable<carrera>{
     return this.http.delete<carrera>(this.url+"/deleteById/"+id, this.httpOptions);
   }
-
   public findAll(): Observable<carrera[]>{
     return this.http.get<carrera[]>(this.url+"/findAll", this.httpOptions);
+  }
+
+  public findByNombre(term: string): Observable<carrera[]>{
+    return this.http.get<carrera[]>(this.url+"/findByNombre/"+term, this.httpOptions);
   }
 
 }

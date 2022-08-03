@@ -27,6 +27,13 @@ public class TicketService {
     public void deleteById(long id){
         ticketRepository.deleteById(id);
     }
+    public List<Ticket> findAll(){
+        return ticketRepository.findAll();
+    }
+
+    public List<Ticket> findByJornada(String term){
+        return ticketRepository.findByJornadaLikeIgnoreCase(term+"%");
+    }
     
     public List<Ticket> findByDescription(String term){
         return ticketRepository.findByDescriptionLikeIgnoreCase(term+"%");

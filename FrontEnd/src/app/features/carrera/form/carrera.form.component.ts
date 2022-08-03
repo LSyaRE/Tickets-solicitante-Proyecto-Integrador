@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { carrera } from './carrera';
-import { carreraService } from './carrera.service';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Usuario } from '../../usuario/usuario';
+import { UsuarioService } from '../../usuario/usuario.service';
+import { carrera } from '../carrera';
+import { carreraService } from '../carrera.service';
 
 @Component({
-  selector: 'app-carrera',
-  templateUrl: './carrera.component.html'
+  selector: 'app-carrera-form',
+  templateUrl: './carrera.form.component.html'
 })
-export class CarreraComponent implements OnInit {
+export class CarreraFormComponent implements OnInit {
 
   constructor(
     private carreraService: carreraService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private usuarioService:UsuarioService,
+    private router:Router
   ) { }
 
   currentEntity: carrera =
@@ -22,7 +26,9 @@ export class CarreraComponent implements OnInit {
           updated: new Date(),
           deleted:new Date(),
           archived:true,
-          enabled: true
+          enabled: true,
+          usuarioId:0,
+          usuarios:[]
   };
 
   ngOnInit(): void {
@@ -48,8 +54,11 @@ export class CarreraComponent implements OnInit {
           updated: new Date(),
           deleted:new Date(),
           archived:true,
-          enabled: true
+          enabled: true,
+          usuarioId:0,
+          usuarios:[]
         };
+        this.router.navigate(['/layout/carrera-list']);
       }
     )
   }
@@ -58,6 +67,13 @@ export class CarreraComponent implements OnInit {
     this.carreraService.findById(id).subscribe(
       (response) => {
         this.currentEntity = response;
+        this.currentEntity.usuarios.forEach(
+          (user) => {
+            this.usuarioService.findById(user.id).subscribe(
+              (item) => user.nombre = item.nombre
+            )
+          }
+        )
       }
     )
   }
@@ -69,6 +85,13 @@ export class CarreraComponent implements OnInit {
         //redireccionar ....
       }
     )
+  }
+
+  removeUsuario(id: number){
+    this.currentEntity.usuarios =
+    this.currentEntity.usuarios.filter(
+      (item) => item.id != id
+    );
   }
 
 }

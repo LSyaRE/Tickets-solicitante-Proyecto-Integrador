@@ -50,9 +50,14 @@ public class TicketController {
         ticketService.deleteById(id);
     }
 
-    @GetMapping("/findByDescription/{term}")
-    public List<Ticket> findByDescription(@PathVariable String term){
-        return ticketService.findByDescription(term);
+    @GetMapping("/findAll")
+    public List<Ticket> findAll(){
+        return ticketService.findAll();
+    }
+
+    @GetMapping("/findByJornada/{term}")
+    public List<Ticket> findByJornada(@PathVariable String term){
+        return ticketService.findByJornada(term);
     }
 
 }

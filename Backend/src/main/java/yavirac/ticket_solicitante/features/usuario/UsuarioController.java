@@ -32,8 +32,8 @@ public class UsuarioController {
     }
 
     //Read
-    @GetMapping("/{id}")
-    public Usuario findById(@PathVariable long id){
+    @GetMapping(value="/findById/{id}")
+    public Usuario findById(@PathVariable long id) {
         return usuarioService.findById(id);
     }
 

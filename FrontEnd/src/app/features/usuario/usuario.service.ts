@@ -33,7 +33,11 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(this.url+"/findAll", this.httpOptions);
   }
 
-  public findByNombre(term: string): Observable<Usuario[]>{
+
+
+  //findByNombre
+  public findByNombre(term:string): Observable<Usuario[]>{
     return this.http.get<Usuario[]>(this.url+"/findByNombre/"+term, this.httpOptions);
   }
+
 }

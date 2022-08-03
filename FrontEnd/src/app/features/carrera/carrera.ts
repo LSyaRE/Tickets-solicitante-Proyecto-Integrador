@@ -1,3 +1,5 @@
+import { Usuario } from "../usuario/usuario";
+
 export interface carrera{
     id: number,
     nombre: string,
@@ -5,5 +7,7 @@ export interface carrera{
     updated: Date,
     enabled: boolean,
     deleted:Date,
-    archived:boolean
+    archived:boolean,
+    usuarioId:number,
+    usuarios:Usuario[]
 }

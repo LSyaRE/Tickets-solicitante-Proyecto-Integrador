@@ -28,5 +28,7 @@ export class RespuestaService {
   public deleteById(id: number): Observable<Respuesta>{
     return this.http.delete<Respuesta>(this.url+"/deleteById/"+id, this.httpOptions);
   }
-
+  public findByComentario(term: string): Observable<Respuesta[]>{
+    return this.http.get<Respuesta[]>(this.url+"/findByComentario/"+term, this.httpOptions);
+  }
 }
