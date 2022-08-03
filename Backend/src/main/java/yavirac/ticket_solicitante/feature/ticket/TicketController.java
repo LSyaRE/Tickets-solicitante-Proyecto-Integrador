@@ -1,5 +1,7 @@
 package yavirac.ticket_solicitante.feature.ticket;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -46,6 +48,11 @@ public class TicketController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable long id){
         ticketService.deleteById(id);
+    }
+
+    @GetMapping("/findByDescription/{term}")
+    public List<Ticket> findByDescription(@PathVariable String term){
+        return ticketService.findByDescription(term);
     }
 
 }

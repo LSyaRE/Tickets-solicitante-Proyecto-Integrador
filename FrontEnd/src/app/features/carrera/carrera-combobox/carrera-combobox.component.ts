@@ -29,7 +29,6 @@ export class CarreraComboboxComponent implements OnInit {
   }
 
   public onSelect(id:string){
-    console.log("El id de la ciudad" + id);
     this.carreraEmitter.emit(parseInt(id));
   }
 

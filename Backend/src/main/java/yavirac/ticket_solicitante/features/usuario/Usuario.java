@@ -1,10 +1,12 @@
 package yavirac.ticket_solicitante.features.usuario;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 
 import lombok.Data;
 
@@ -23,4 +25,7 @@ public class Usuario {
   private boolean enabled;
   private boolean archived;
   private Long carreraId;
+
+  @MappedCollection(idColumn = "usuario_id")
+  private Set<UsuarioTicket> usrtickets = new HashSet<>();
 }

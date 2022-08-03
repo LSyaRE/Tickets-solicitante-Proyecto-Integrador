@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Ticket } from '../../ticket/ticket';
+import { TicketService } from '../../ticket/ticket.service';
 import { Usuario } from '../usuario';
 import { UsuarioService } from '../usuario.service';
 
@@ -11,6 +13,7 @@ export class UsuarioFormComponent implements OnInit {
 
   constructor(
     private usuarioService: UsuarioService,
+    private ticketService: TicketService,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) { }
@@ -21,7 +24,8 @@ export class UsuarioFormComponent implements OnInit {
     correo:"",
     password:"",
     enabled: true,
-    carreraId: 0
+    carreraId: 0,
+    usrtickets: []
   };
 
   ngOnInit(): void {
@@ -44,7 +48,8 @@ export class UsuarioFormComponent implements OnInit {
           correo:"",
           password:"",
           enabled: true,
-          carreraId: 0
+          carreraId: 0,
+          usrtickets: []
         };
         this.router.navigate(['/layout/usuario-list']);
       }
@@ -55,6 +60,13 @@ export class UsuarioFormComponent implements OnInit {
     this.usuarioService.findById(id).subscribe(
       (response)=>{
         this.currentEntity = response;
+        this.currentEntity.usrtickets.forEach(
+          (ursTk) => {
+            this.ticketService.findById(ursTk.id).subscribe(
+              (item) => ursTk.description = item.description
+            )
+          }
+        )
       }
     )
   }
@@ -70,10 +82,18 @@ export class UsuarioFormComponent implements OnInit {
           correo:"",
           password:"",
           enabled: true,
-          carreraId: 0
+          carreraId: 0,
+          usrtickets: []
         };
       }
     )
+  }
+
+  removeTicket(id: number): void{
+    this.currentEntity.usrtickets =
+    this.currentEntity.usrtickets.filter(
+      (item) => item.id != id
+    );
   }
 
 }
