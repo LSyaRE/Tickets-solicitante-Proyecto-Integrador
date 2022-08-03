@@ -14,11 +14,11 @@ import { UsuarioListComponent } from './usuario/list/usuario-list.component';
 import { UsuarioToolbarComponent } from './usuario/toolbar/usuario-toolbar.component';
 import { CarreraComboboxComponent } from './carrera/carrera-combobox/carrera-combobox.component';
 import { TicketSearchComponent } from './ticket/form/ticket-search/ticket-search.component';
-import { carreraComboboxComponent } from './carrera/carrera-combobox.component';
 import { RespuestaSearchComponent } from './respuesta/respuesta-search/respuesta-search.component';
 import { CarreraFormComponent } from './carrera/form/carrera.form.component';
 import { CarreraListComponent } from './carrera/list/carrera-list.component';
 import { CarreraToolbarComponent } from './carrera/toolbar/carrera-toolbar.component';
+import { carreraTicketComboboxComponent } from './carrera/carrera-combobox-ticket/carrera-ticket-combobox.component';
 import { UsuarioComboboxComponent } from './usuario/usuario-combobox.component';
 import { UsuarioSearchComponent } from './usuario/usuario-search/usuario-search.component';
 
@@ -29,7 +29,7 @@ import { UsuarioSearchComponent } from './usuario/usuario-search/usuario-search.
     TicketListComponent,
     TicketToolbarComponent,
     TicketSearchComponent,
-    carreraComboboxComponent,
+    carreraTicketComboboxComponent,
     CarreraFormComponent,
     CarreraListComponent,
     CarreraToolbarComponent,

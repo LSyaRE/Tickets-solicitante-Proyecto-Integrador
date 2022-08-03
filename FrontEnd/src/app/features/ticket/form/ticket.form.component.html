@@ -1,4 +1,4 @@
-<app-ticket-toolbar [entityDescription]="currentEntity.jornada"></app-ticket-toolbar>
+<app-ticket-toolbar [entityDescription]="currentEntity.description"></app-ticket-toolbar>
 <div class="grid justify-center mt-4">
   <div class="card shadow-2xl shadow-black">
     <div class="card-body">
@@ -15,8 +15,8 @@
           [(ngModel)]="currentEntity.jornada">
 
           <label>carrera</label>
-          <app-carrera-combobox (carreraIdEmitter)="currentEntity.carreraId=$event" [carreraId]="currentEntity.carreraId">
-          </app-carrera-combobox>
+          <app-carrera-ticket-combobox (carreraIdEmitter)="currentEntity.carreraId=$event" [carreraId]="currentEntity.carreraId">
+          </app-carrera-ticket-combobox>
           
         <div class="form-control">
           <label class="label cursor-pointer justify-start">

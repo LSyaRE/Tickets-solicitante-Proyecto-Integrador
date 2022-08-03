@@ -59,5 +59,9 @@ public class TicketController {
     public List<Ticket> findByJornada(@PathVariable String term){
         return ticketService.findByJornada(term);
     }
+    @GetMapping("/findByDescription/{term}")
+    public List<Ticket> findByDescription(@PathVariable String term){
+        return ticketService.findByDescription(term);
+    }
 
 }

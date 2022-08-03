@@ -1,13 +1,14 @@
 <div class="">
-    <app-ticket-toolbar (termEmitter)="findByJornada($event)" ></app-ticket-toolbar>
+    <app-ticket-toolbar (termEmitter)="findByDescription($event)" ></app-ticket-toolbar>
     <div class="overflow-x-auto bg-white">
         <table class="table table-compact w-full" >
             <thead>
                 <tr>
                     <th></th>
                     <th></th>
-                    <th>Identificación</th>
+                    <th>Descripcion</th>
                     <th>Activo</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -19,7 +20,7 @@
                         </a>
                     </td>
                     <td>{{ticket.id}}</td>
-                   
+                    <td>{{ticket.description}}</td>
                     <td>
                         <input class="toggle toggle-primary" type="checkbox" name="" id="" [ngModel]="ticket.enabled" >
                     </td>

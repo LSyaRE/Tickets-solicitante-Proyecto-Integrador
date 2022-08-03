@@ -13,14 +13,14 @@ import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
 @Data
-@Table("tickets")
+@Table("ticket")
 public class Ticket {
 
     @Id
     private long id;
     @Column("usuario_solicitante")
     private int usuarioSolicitante;
-    private int carrera;
+    private Long carreraId;
     private boolean enabled;
     private Timestamp updated;
     private Timestamp deleted;
@@ -28,7 +28,7 @@ public class Ticket {
     private String description;
     private String jornada;
     private String curso;
-    private long carreraId;
+    
 
     @MappedCollection(idColumn = "ticket_id")
     private Set<TicketRespuesta> respuestas = new HashSet<>();

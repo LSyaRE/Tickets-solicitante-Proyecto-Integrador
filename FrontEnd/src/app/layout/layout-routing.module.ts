@@ -7,7 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MainComponent } from './main/main.component';
 import { UsuarioFormComponent } from '../features/usuario/form/usuario.form.component';
 import { UsuarioListComponent } from '../features/usuario/list/usuario-list.component';
-
+import { TicketListComponent } from '../features/ticket/list/ticket-list.component';
 const routes: Routes = [
   {path: '', component:MainComponent ,
     children: [
@@ -16,10 +16,12 @@ const routes: Routes = [
       {path:'carrera-form',component:CarreraFormComponent},
       {path:'carrera-form/:id',component:CarreraFormComponent},
       {path:'carrera-list',component:CarreraListComponent},
-      {path:'tiket',component:TicketFormComponent},
+      {path:'ticket-form',component:TicketFormComponent},
+      {path:'ticket-form/:id',component:TicketFormComponent},
       {path: 'usuario-form', component: UsuarioFormComponent},
       {path: 'usuario-form/:id', component: UsuarioFormComponent},
       {path: 'usuario-list', component: UsuarioListComponent},
+      {path: 'ticket-list',component:TicketListComponent }
     ]
   }
 ];

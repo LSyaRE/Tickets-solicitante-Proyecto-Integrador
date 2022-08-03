@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { carrera } from './carrera';
-import { carreraService } from './carrera.service';
+import { carrera } from '../carrera';
+import { carreraService } from '../carrera.service';
 
 @Component({
-  selector: 'app-carrera-combobox',
-  templateUrl: './carrera-combobox.component.html'
+  selector: 'app-carrera-ticket-combobox',
+  templateUrl: './carrera-ticket-combobox.component.html'
 })
-export class carreraComboboxComponent implements OnInit {
+export class carreraTicketComboboxComponent implements OnInit {
 
   constructor(
     private carreraService: carreraService
