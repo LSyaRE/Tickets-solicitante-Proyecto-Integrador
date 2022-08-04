@@ -7,5 +7,6 @@ export interface Usuario {
   password: string,
   enabled: boolean,
   carreraId: number,
-  usrtickets: Ticket[]
+  usrtickets: Ticket[],
+  usuarioId: number,
 }

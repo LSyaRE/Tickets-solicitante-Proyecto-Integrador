@@ -16,7 +16,6 @@ public class Respuesta {
     private String comentario;
     private Timestamp created;
     private Timestamp updated;
-   
     private boolean enabled;
     private boolean archived;
     @Column("id_ticket")

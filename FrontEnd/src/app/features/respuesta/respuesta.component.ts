@@ -20,6 +20,8 @@ export class RespuestaComponent implements OnInit {
       created: new Date(),
       enabled: true,
       resuelto: false,
+      idTicket:0,
+      respuestaId:0
     };
 
 
@@ -47,6 +49,8 @@ export class RespuestaComponent implements OnInit {
         created: new Date(),
         enabled: true,
         resuelto: false,
+        idTicket:0,
+        respuestaId:0
         };
       }
     )

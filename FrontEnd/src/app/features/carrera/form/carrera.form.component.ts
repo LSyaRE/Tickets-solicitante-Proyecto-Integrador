@@ -94,4 +94,11 @@ export class CarreraFormComponent implements OnInit {
     );
   }
 
+  addUser(user: Usuario){
+    user.usuarioId = user.id;
+    this.currentEntity.usuarios.push(
+      user
+    );
+  }
+
 }

@@ -1,7 +1,9 @@
 export interface Respuesta {
     id:number,
+    idTicket: number,
     comentario: string,
     created: Date,
     enabled: boolean,
-    resuelto: boolean
+    resuelto: boolean,
+    respuestaId:number
 }

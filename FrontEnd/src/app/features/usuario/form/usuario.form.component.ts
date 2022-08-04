@@ -25,7 +25,8 @@ export class UsuarioFormComponent implements OnInit {
     password:"",
     enabled: true,
     carreraId: 0,
-    usrtickets: []
+    usrtickets: [],
+    usuarioId:0
   };
 
   ngOnInit(): void {
@@ -49,7 +50,8 @@ export class UsuarioFormComponent implements OnInit {
           password:"",
           enabled: true,
           carreraId: 0,
-          usrtickets: []
+          usrtickets: [],
+          usuarioId:0
         };
         this.router.navigate(['/layout/usuario-list']);
       }
@@ -83,7 +85,8 @@ export class UsuarioFormComponent implements OnInit {
           password:"",
           enabled: true,
           carreraId: 0,
-          usrtickets: []
+          usrtickets: [],
+          usuarioId:0
         };
       }
     )
@@ -95,5 +98,7 @@ export class UsuarioFormComponent implements OnInit {
       (item) => item.id != id
     );
   }
+
+  
 
 }

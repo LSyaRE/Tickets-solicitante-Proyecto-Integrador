@@ -10,7 +10,7 @@ import lombok.Data;
 @Table("usuario_carrera")
 public class CarreraUsuario {
     
-    @Id private Long id;
+    @Id private long id;
     @Column("carrera_id")
     private Long carreraId;
     @Column("usuario_id")

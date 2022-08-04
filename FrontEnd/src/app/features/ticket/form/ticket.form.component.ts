@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Respuesta } from '../../respuesta/respuesta';
+import { RespuestaService } from '../../respuesta/respuesta.service';
 import { Ticket } from '../ticket';
 import { TicketService } from '../ticket.service';
 
@@ -11,7 +13,8 @@ export class TicketFormComponent implements OnInit {
 
   constructor(
     private ticketService: TicketService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private respuestaService: RespuestaService,
   ) { }
 
   currentEntity: Ticket = 
@@ -58,6 +61,13 @@ export class TicketFormComponent implements OnInit {
     this.ticketService.findById(id).subscribe(
       (response) => {
         this.currentEntity = response;
+        this.currentEntity.respuestas.forEach(
+          (respuesta) => {
+            this.respuestaService.findById(respuesta.id).subscribe(
+              (item) => respuesta.comentario = item.comentario
+            )
+          }
+        )
       }
     )
   }
@@ -79,4 +89,10 @@ export class TicketFormComponent implements OnInit {
     );
   }
 
+  addRespuesta(respuesta: Respuesta){
+    respuesta.respuestaId = respuesta.id;
+    this.currentEntity.respuestas.push(
+      respuesta
+    );
+  }
 }
