@@ -14,9 +14,9 @@ import lombok.Data;
 @Data
 @Table("carrera")
 public class Carrera {
-
     @Id
-    private long id;
+    @Column("carrera_id")
+    private long carreraId;
     private String nombre;
     private Timestamp updated;
     private Timestamp deleted;

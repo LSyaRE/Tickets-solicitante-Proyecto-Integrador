@@ -13,9 +13,8 @@ import lombok.Data;
 public class Usuario {
 
   @Id
-  private long id;
-  @Column("rol_id")
-  private long rolId;
+  @Column("usuario_id")
+  private Long usuarioId;
   private String nombre;
   private String correo;
   private String password;
