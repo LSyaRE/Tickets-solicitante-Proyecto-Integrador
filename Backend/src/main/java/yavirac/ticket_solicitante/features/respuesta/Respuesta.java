@@ -19,6 +19,10 @@ public class Respuesta {
     private String comentario;
     private Timestamp created;
     private Timestamp updated;
+<<<<<<< HEAD
+=======
+   
+>>>>>>> bcf484082cc9c283147e742b5bdd264fe78548c9
     private boolean enabled;
     private boolean archived;
     @Column("id_ticket")
