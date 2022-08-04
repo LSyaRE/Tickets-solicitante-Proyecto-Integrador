@@ -31,4 +31,10 @@ export class RespuestaService {
   public findByComentario(term: string): Observable<Respuesta[]>{
     return this.http.get<Respuesta[]>(this.url+"/findByComentario/"+term, this.httpOptions);
   }
+
+  public findAll(): Observable<Respuesta[]>{
+    return this.http.get<Respuesta[]>(this.url+"/findAll", this.httpOptions);
+  }
+
+
 }

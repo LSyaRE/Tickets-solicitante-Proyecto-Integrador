@@ -9,7 +9,6 @@ import { TicketFormComponent } from './ticket/form/ticket.form.component';
 import { TicketListComponent } from './ticket/list/ticket-list.component';
 import { TicketToolbarComponent } from './ticket/toolbar/ticket-toolbar.component';
 import { UsuarioFormComponent } from './usuario/form/usuario.form.component';
-import { RespuestaComponent } from './respuesta/respuesta.component';
 import { UsuarioListComponent } from './usuario/list/usuario-list.component';
 import { UsuarioToolbarComponent } from './usuario/toolbar/usuario-toolbar.component';
 import { CarreraComboboxComponent } from './carrera/carrera-combobox/carrera-combobox.component';
@@ -21,6 +20,11 @@ import { CarreraToolbarComponent } from './carrera/toolbar/carrera-toolbar.compo
 import { carreraTicketComboboxComponent } from './carrera/carrera-combobox-ticket/carrera-ticket-combobox.component';
 import { UsuarioComboboxComponent } from './usuario/usuario-combobox.component';
 import { UsuarioSearchComponent } from './usuario/usuario-search/usuario-search.component';
+import { FormComponent } from './respuesta/form/form.component';
+import { RespuestaListComponent } from './respuesta/list/respuesta-list.component';
+import { RespuestaToolbarComponent } from './respuesta/toolbar/respuesta-toolbar.component';
+import { TicketComboboxComponent } from './ticket/ticket-combobox/ticket-combobox.component';
+
 
 
 @NgModule({
@@ -39,8 +43,12 @@ import { UsuarioSearchComponent } from './usuario/usuario-search/usuario-search.
     UsuarioFormComponent,
     UsuarioToolbarComponent,
     UsuarioListComponent,
-    RespuestaComponent,
     RespuestaSearchComponent,
+    FormComponent,
+    RespuestaListComponent,
+    RespuestaToolbarComponent,
+    TicketComboboxComponent,
+    
   ],
   imports: [
     CommonModule,

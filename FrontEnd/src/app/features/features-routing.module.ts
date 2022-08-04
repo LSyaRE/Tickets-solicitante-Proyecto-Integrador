@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarreraFormComponent } from './carrera/form/carrera.form.component';
-import { RespuestaComponent } from './respuesta/respuesta.component';
+import { FormComponent } from './respuesta/form/form.component';
+
 import { TicketFormComponent } from './ticket/form/ticket.form.component';
 
 import { UsuarioFormComponent } from './usuario/form/usuario.form.component';
@@ -13,8 +14,8 @@ const routes: Routes = [
   {path: 'carrera/:id', component:CarreraFormComponent},
   {path: 'ticket', component:TicketFormComponent},
   {path: 'ticket/:id', component:TicketFormComponent},
-  {path: 'respuesta', component:RespuestaComponent},
-  {path: 'respuesta/:id', component:RespuestaComponent},
+  {path: 'respuesta', component:FormComponent},
+  {path: 'respuesta/:id', component:FormComponent},
   
 ];
 
