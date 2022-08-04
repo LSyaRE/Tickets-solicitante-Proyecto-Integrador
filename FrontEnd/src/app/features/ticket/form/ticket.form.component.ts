@@ -25,7 +25,8 @@ export class TicketFormComponent implements OnInit {
     description:"",
     jornada:"",
     carreraId:0,
-    respuestas: []
+    respuestas: [],
+    ticketId:0
   };
 
   ngOnInit(): void {
@@ -51,7 +52,8 @@ export class TicketFormComponent implements OnInit {
           description:"",
           jornada:"",
           carreraId:0,
-          respuestas: []
+          respuestas: [],
+          ticketId:0,
         };
       }
     )

@@ -92,6 +92,11 @@ export class UsuarioFormComponent implements OnInit {
     );
   }
 
-  
+  addTicket(ticket: Ticket){
+    ticket.ticketId = ticket.id;
+    this.currentEntity.usrtickets.push(
+      ticket
+    );
+  }
 
 }

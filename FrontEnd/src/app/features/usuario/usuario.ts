@@ -9,4 +9,5 @@ export interface Usuario {
   carreraId: number,
   usrtickets: Ticket[],
   usuarioId: number,
+  
 }

@@ -7,5 +7,6 @@ export interface Ticket {
     description:string,
     jornada:string,
     carreraId:number,
-    respuestas: Respuesta[]
+    respuestas: Respuesta[],
+    ticketId:number
 }
