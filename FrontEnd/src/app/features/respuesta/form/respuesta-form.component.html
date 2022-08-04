@@ -37,7 +37,6 @@
       </div>
     </div>
 
-    <div class="divider"> </div>
 
     <table class="table table-compact">
       <thead>
@@ -50,7 +49,7 @@
         <tr *ngFor="let ticket of currentEntity.tickets">
           <td>{{ticket.description}}</td>
           <td>
-            <a (click)="removeRespuesta(ticket.id)">
+            <a (click)="removeTicket(ticket.id)">
               <svg class="w-4 h-4" fill="red"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
               x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
              xml:space="preserve">
@@ -69,12 +68,14 @@
         </tr>
         <tr>
           <td>
-            <app-ticket-search (ticketEmitter)="addTicket($event)" ></app-ticket-search>
-          </td>
+            <app-ticket-search (usrTickEmitter)="addTicket ($event)" ></app-ticket-search>
           <td></td>
         </tr>
       </tbody>
     </table>
+
+    <div class="divider"> </div>
+
 
     <div class="card card-compact shadow-2xl shadow-black bg-teal-800">
       <div class="card-body">

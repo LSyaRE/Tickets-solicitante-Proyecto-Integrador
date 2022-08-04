@@ -64,6 +64,13 @@ export class RespuestaFormComponent implements OnInit {
     this.respuestaService.findById(id).subscribe(
       (response) => {
         this.currentEntity = response;
+        this.currentEntity.tickets.forEach(
+          (respuesta) => {
+            this.respuestaService.findById(respuesta.id).subscribe(
+              (item) => respuesta.description = item.comentario
+            )
+          }
+        )
       }
     )
   }
@@ -77,7 +84,7 @@ export class RespuestaFormComponent implements OnInit {
     )
   }
 
-  removeRespuesta(id: number):void {
+  removeTicket(id: number):void {
 
     this.currentEntity.tickets =
     this.currentEntity.tickets.filter(
@@ -86,7 +93,7 @@ export class RespuestaFormComponent implements OnInit {
   }
 
   addTicket(ticket: Ticket){
-    // ticket.ticketId = ticket.id;
+    ticket.ticketId = ticket.id;
     this.currentEntity.tickets.push(
       ticket
     );
