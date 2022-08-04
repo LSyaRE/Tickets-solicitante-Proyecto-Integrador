@@ -62,6 +62,13 @@ export class UsuarioFormComponent implements OnInit {
     this.usuarioService.findById(id).subscribe(
       (response)=>{
         this.currentEntity = response;
+        this.currentEntity.usrtickets.forEach(
+          (ursTk) => {
+            this.ticketService.findById(ursTk.id).subscribe(
+              (item) => ursTk.description = item.description
+            )
+          }
+        )
       }
     )
   }
