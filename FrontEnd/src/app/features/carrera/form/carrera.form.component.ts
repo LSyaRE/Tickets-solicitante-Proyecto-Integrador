@@ -72,6 +72,13 @@ export class CarreraFormComponent implements OnInit {
             this.usuarioService.findById(user.id).subscribe(
               (item) => user.nombre = item.nombre
             )
+            this.currentEntity.usuarios.forEach(
+              (user) => {
+                this.usuarioService.findById(user.id).subscribe(
+                  (item) => user.nombre = item.nombre
+                )
+              }
+            )
           }
         )
       }

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { RespuestaService } from '../respuesta.service';
+import { Respuesta } from '../respuesta';
 import { ActivatedRoute } from '@angular/router';
-import { Respuesta } from './respuesta';
-import { RespuestaService } from './respuesta.service';
 
 @Component({
-  selector: 'app-respuesta',
-  templateUrl: './respuesta.component.html',
-  styleUrls: ['./respuesta.component.css']
+  selector: 'app-respuesta-form',
+  templateUrl: './respuesta-form.component.html',
+  
 })
-export class RespuestaComponent implements OnInit {
+export class RespuestaFormComponent implements OnInit {
 
   constructor( private respuestaService: RespuestaService,
     private activatedRoute: ActivatedRoute) { }
@@ -21,7 +21,8 @@ export class RespuestaComponent implements OnInit {
       enabled: true,
       resuelto: false,
       idTicket:0,
-      respuestaId:0
+      respuestaId:0,
+      tickets: []
     };
 
 
@@ -50,7 +51,9 @@ export class RespuestaComponent implements OnInit {
         enabled: true,
         resuelto: false,
         idTicket:0,
-        respuestaId:0
+        respuestaId:0,
+        tickets: []
+
         };
       }
     )
@@ -71,6 +74,14 @@ export class RespuestaComponent implements OnInit {
         //redireccionar ....
       }
     )
+  }
+
+  removeRespuesta(id: number):void {
+
+    this.currentEntity.tickets =
+    this.currentEntity.tickets.filter(
+      (item) => item.id != id 
+    );
   }
 
 }

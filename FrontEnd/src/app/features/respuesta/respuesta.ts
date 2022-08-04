@@ -1,3 +1,5 @@
+import { Ticket } from "../ticket/ticket";
+
 export interface Respuesta {
     id:number,
     idTicket: number,
@@ -5,5 +7,6 @@ export interface Respuesta {
     created: Date,
     enabled: boolean,
     resuelto: boolean,
-    respuestaId:number
+    respuestaId:number,
+    tickets:Ticket[]
 }

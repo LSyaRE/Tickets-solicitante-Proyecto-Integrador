@@ -8,6 +8,8 @@ import { MainComponent } from './main/main.component';
 import { UsuarioFormComponent } from '../features/usuario/form/usuario.form.component';
 import { UsuarioListComponent } from '../features/usuario/list/usuario-list.component';
 import { TicketListComponent } from '../features/ticket/list/ticket-list.component';
+import { RespuestaFormComponent } from '../features/respuesta/form/respuesta-form.component';
+import { RespuestaListComponent } from '../features/respuesta/list/respuesta-list.component';
 const routes: Routes = [
   {path: '', component:MainComponent ,
     children: [
@@ -20,6 +22,9 @@ const routes: Routes = [
       {path:'ticket-form/:id',component:TicketFormComponent},
       {path: 'usuario-form', component: UsuarioFormComponent},
       {path: 'usuario-form/:id', component: UsuarioFormComponent},
+      {path: 'respuesta-form', component: RespuestaFormComponent},
+      {path: 'respuesta-form/:id', component: RespuestaFormComponent},
+      {path: 'respuesta-list', component: RespuestaListComponent},
       {path: 'usuario-list', component: UsuarioListComponent},
       {path: 'ticket-list',component:TicketListComponent }
     ]

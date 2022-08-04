@@ -32,4 +32,10 @@ public class RespuestaService {
     public List<Respuesta> findByComentario(String term){
         return respuestaRepository.findByComentarioLikeIgnoreCase(term+"%");
     }
+    public List<Respuesta> findAll(){
+        return respuestaRepository.findAll();
+    }
+
+  
+    
 }
