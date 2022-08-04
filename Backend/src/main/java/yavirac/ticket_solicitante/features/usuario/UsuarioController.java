@@ -32,7 +32,7 @@ public class UsuarioController {
     }
 
     //Read
-    @GetMapping(value="/findById/{id}")
+    @GetMapping(value="/{id}")
     public Usuario findById(@PathVariable long id) {
         return usuarioService.findById(id);
     }
