@@ -2,18 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { RespuestaService } from '../respuesta.service';
 import { Respuesta } from '../respuesta';
 import { ActivatedRoute } from '@angular/router';
+import { Ticket } from '../../ticket/ticket';
 
 @Component({
   selector: 'app-respuesta-form',
   templateUrl: './respuesta-form.component.html',
-  
+
 })
 export class RespuestaFormComponent implements OnInit {
 
   constructor( private respuestaService: RespuestaService,
     private activatedRoute: ActivatedRoute) { }
 
-    currentEntity: Respuesta = 
+    currentEntity: Respuesta =
     {
       id: 0,
       comentario: "",
@@ -43,7 +44,7 @@ export class RespuestaFormComponent implements OnInit {
     this.respuestaService.save(this.currentEntity)
     .subscribe(
       () => {
-        this.currentEntity = 
+        this.currentEntity =
         {
         id: 0,
         comentario: "",
@@ -80,7 +81,14 @@ export class RespuestaFormComponent implements OnInit {
 
     this.currentEntity.tickets =
     this.currentEntity.tickets.filter(
-      (item) => item.id != id 
+      (item) => item.id != id
+    );
+  }
+
+  addTicket(ticket: Ticket){
+    // ticket.ticketId = ticket.id;
+    this.currentEntity.tickets.push(
+      ticket
     );
   }
 

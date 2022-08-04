@@ -4,7 +4,7 @@ import { TicketService } from '../ticket.service';
 
 @Component({
   selector: 'app-ticket-combobox',
-  templateUrl: './ticket-combobox.component.html',
+  templateUrl: './ticket-combobox.component.html'
 
 })
 export class TicketComboboxComponent implements OnInit {

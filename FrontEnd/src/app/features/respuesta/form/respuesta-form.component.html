@@ -8,14 +8,14 @@
         </div>
         <div class="divider"> </div>
         <div class="grid">
-          
+
           <div class="form-control">
             <label class="label cursor-pointer justify-start">
               <input type="checkbox" class="toggle toggle-primary" [(ngModel)]="currentEntity.enabled" />
               <span class="label-text ml-2">Activo</span>
             </label>
           </div>
-          
+
           <div class="form-control">
             <label class="label cursor-pointer justify-start">
               <input type="checkbox" class="toggle toggle-primary" [(ngModel)]="currentEntity.resuelto" />
@@ -29,14 +29,14 @@
         [(ngModel)]="currentEntity.comentario" ></textarea>
 
         <app-ticket-combobox (ticketEmitter)="currentEntity.id=$event" [ticketId]="currentEntity.id"></app-ticket-combobox>
-     
+
         <div class="card-actions">
           <button class="btn btn-primary btn-sm" (click)="save()">Guardar</button>
           <button class="btn btn-sm">Cancelar</button>
         </div>
       </div>
     </div>
-  
+
     <div class="divider"> </div>
 
     <table class="table table-compact">
@@ -64,25 +64,25 @@
              </g>
            </svg>
             </a>
-            
+
           </td>
         </tr>
         <tr>
           <td>
-            <app-ticket-search (ticketEmitter)="this.currentEntity.id"></app-ticket-search>
+            <app-ticket-search (ticketEmitter)="addTicket($event)" ></app-ticket-search>
           </td>
           <td></td>
         </tr>
       </tbody>
     </table>
-  
+
     <div class="card card-compact shadow-2xl shadow-black bg-teal-800">
       <div class="card-body">
         <div class="card-title  text-white" >Precaución</div>
         <p class="text-white">Si elimina el registro no prodrá recuperarlo</p>
         <div class="card-actions">
           <label for="my-modal-6" class="btn modal-button btn-secondary btn-xs bg-pink-800">Eliminar</label>
-  
+
           <!-- Put this part before </body> tag -->
           <input type="checkbox" id="my-modal-6" class="modal-toggle" />
           <div class="modal modal-bottom sm:modal-middle">
@@ -99,5 +99,5 @@
         </div>
       </div>
     </div>
-  
+
   </div>

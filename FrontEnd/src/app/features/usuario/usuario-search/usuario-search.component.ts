@@ -16,7 +16,7 @@ export class UsuarioSearchComponent implements OnInit {
 
     @Output() usuarioEmitter =new EventEmitter<Usuario>();
 
-  ngOnInit(): void {
+    ngOnInit(): void {
   }
 
   onInput(term:string): void{
