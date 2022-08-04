@@ -20,7 +20,7 @@ import { CarreraToolbarComponent } from './carrera/toolbar/carrera-toolbar.compo
 import { carreraTicketComboboxComponent } from './carrera/carrera-combobox-ticket/carrera-ticket-combobox.component';
 import { UsuarioComboboxComponent } from './usuario/usuario-combobox.component';
 import { UsuarioSearchComponent } from './usuario/usuario-search/usuario-search.component';
-import { FormComponent } from './respuesta/form/form.component';
+import { RespuestaFormComponent } from './respuesta/form/respuesta-form.component';
 import { RespuestaListComponent } from './respuesta/list/respuesta-list.component';
 import { RespuestaToolbarComponent } from './respuesta/toolbar/respuesta-toolbar.component';
 import { TicketComboboxComponent } from './ticket/ticket-combobox/ticket-combobox.component';
@@ -44,7 +44,7 @@ import { TicketComboboxComponent } from './ticket/ticket-combobox/ticket-combobo
     UsuarioToolbarComponent,
     UsuarioListComponent,
     RespuestaSearchComponent,
-    FormComponent,
+    RespuestaFormComponent,
     RespuestaListComponent,
     RespuestaToolbarComponent,
     TicketComboboxComponent,

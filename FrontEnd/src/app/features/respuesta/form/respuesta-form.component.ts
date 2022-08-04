@@ -4,11 +4,11 @@ import { Respuesta } from '../respuesta';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
+  selector: 'app-respuesta-form',
+  templateUrl: './respuesta-form.component.html',
   
 })
-export class FormComponent implements OnInit {
+export class RespuestaFormComponent implements OnInit {
 
   constructor( private respuestaService: RespuestaService,
     private activatedRoute: ActivatedRoute) { }

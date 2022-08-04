@@ -43,6 +43,10 @@ public class RespuestaController {
     {
         return respuestaService.save(respuesta);
     }
+    @GetMapping("/findAll")
+    public List<Respuesta> findAll(){
+        return respuestaService.findAll();
+    }
 
     //Delete
     @DeleteMapping("/deleteById/{id}")

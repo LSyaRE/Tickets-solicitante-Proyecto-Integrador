@@ -1,4 +1,4 @@
-package yavirac.ticket_solicitante.feature.ticket;
+package yavirac.ticket_solicitante.features.ticket;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;

@@ -9,7 +9,7 @@ import { TicketService } from '../ticket.service';
 })
 export class TicketSearchComponent implements OnInit {
 
-  constructor(    private ticketService: TicketService
+  constructor(private ticketService: TicketService
     ) {
     
    }
