@@ -28,7 +28,6 @@ export class UsuarioComboboxComponent implements OnInit {
   }
 
   public onSelect(id:string){
-    console.log("El id de usuario es:" + id);
     this.usuarioIdEmitter.emit(parseInt(id));
   }
 
