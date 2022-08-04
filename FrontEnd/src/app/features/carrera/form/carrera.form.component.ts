@@ -7,91 +7,77 @@ import { carreraService } from '../carrera.service';
 
 @Component({
   selector: 'app-carrera-form',
-  templateUrl: './carrera.form.component.html'
+  templateUrl: './carrera.form.component.html',
 })
 export class CarreraFormComponent implements OnInit {
-
   constructor(
     private carreraService: carreraService,
     private activatedRoute: ActivatedRoute,
-    private usuarioService:UsuarioService,
-    private router:Router
-  ) { }
+    private usuarioService: UsuarioService,
+    private router: Router
+  ) {}
 
-  currentEntity: carrera =
-  {
-          id: 0,
-          nombre: "",
-          tipoCarrera: "",
-          updated: new Date(),
-          deleted:new Date(),
-          archived:true,
-          enabled: true,
-          usuarioId:0,
-          usuarios:[]
+  currentEntity: carrera = {
+    carreraId: 0,
+    nombre: '',
+    tipoCarrera: '',
+    updated: new Date(),
+    deleted: new Date(),
+    archived: true,
+    enabled: true,
+    usuarioId: 0,
+    usuarios: [],
   };
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(
-      (params) => {
-        if (params.get("id")){
-          this.findById(parseInt(params.get("id")!));
-        }
+    this.activatedRoute.paramMap.subscribe((params) => {
+      if (params.get('id')) {
+        this.findById(parseInt(params.get('id')!));
       }
-    )
+    });
   }
 
-  save():void {
+  save(): void {
     console.table(this.currentEntity);
-    this.carreraService.save(this.currentEntity)
-    .subscribe(
-      () => {
-        this.currentEntity =
-        {
-          id: 0,
-          nombre: "",
-          tipoCarrera: "",
-          updated: new Date(),
-          deleted:new Date(),
-          archived:true,
-          enabled: true,
-          usuarioId:0,
-          usuarios:[]
-        };
-        this.router.navigate(['/layout/carrera-list']);
-      }
-    )
+    this.carreraService.save(this.currentEntity).subscribe(() => {
+      this.currentEntity = {
+        carreraId: 0,
+        nombre: '',
+        tipoCarrera: '',
+        updated: new Date(),
+        deleted: new Date(),
+        archived: false,
+        enabled: true,
+        usuarioId: 0,
+        usuarios: [],
+      };
+      this.router.navigate(['/layout/carrera-list']);
+    });
   }
 
-  findById(id: number):void {
-    this.carreraService.findById(id).subscribe(
-      (response) => {
-        this.currentEntity = response;
-        this.currentEntity.usuarios.forEach(
-          (user) => {
-            this.usuarioService.findById(user.id).subscribe(
-              (item) => user.nombre = item.nombre
-            )
-          }
-        )
-      }
-    )
+  findById(id: number): void {
+    this.carreraService.findById(id).subscribe((response) => {
+      this.currentEntity = response;
+      this.currentEntity.usuarios.forEach((user) => {
+        this.usuarioService
+          .findById(user.usuarioId)
+          .subscribe((item) => (user.nombre = item.nombre));
+      });
+    });
   }
 
-  deleteById():void{
-    this.carreraService.deleteById(this.currentEntity.id).subscribe(
-      () => {
-        console.log("Borrado");
+  deleteById(): void {
+    this.carreraService
+      .deleteById(this.currentEntity.carreraId)
+      .subscribe(() => {
+        console.log('Borrado');
         //redireccionar ....
-      }
-    )
+      });
   }
 
-  removeUsuario(id: number){
-    this.currentEntity.usuarios =
-    this.currentEntity.usuarios.filter(
-      (item) => item.id != id
+  removeUsuario(id: number) {
+    this.currentEntity.usuarios = this.currentEntity.usuarios.filter(
+      (item) => item.usuarioId != id
     );
   }
-
 }

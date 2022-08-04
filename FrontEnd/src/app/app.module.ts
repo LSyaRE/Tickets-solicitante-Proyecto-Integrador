@@ -18,7 +18,6 @@ import { LayoutModule } from './layout/layout.module';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FeaturesModule,
     LayoutModule
   ],
   providers: [],

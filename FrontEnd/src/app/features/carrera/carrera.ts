@@ -1,13 +1,13 @@
-import { Usuario } from "../usuario/usuario";
+import { Usuario } from '../usuario/usuario';
 
-export interface carrera{
-    id: number,
-    nombre: string,
-    tipoCarrera: string,
-    updated: Date,
-    enabled: boolean,
-    deleted:Date,
-    archived:boolean,
-    usuarioId:number,
-    usuarios:Usuario[]
+export interface carrera {
+  carreraId: number;
+  nombre: string;
+  tipoCarrera: string;
+  updated: Date;
+  enabled: boolean;
+  deleted: Date;
+  archived: boolean;
+  usuarioId: number;
+  usuarios: Usuario[];
 }
