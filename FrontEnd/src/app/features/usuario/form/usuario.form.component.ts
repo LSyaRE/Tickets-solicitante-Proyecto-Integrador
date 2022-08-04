@@ -60,13 +60,6 @@ export class UsuarioFormComponent implements OnInit {
     this.usuarioService.findById(id).subscribe(
       (response)=>{
         this.currentEntity = response;
-        this.currentEntity.usrtickets.forEach(
-          (ursTk) => {
-            this.ticketService.findById(ursTk.id).subscribe(
-              (item) => ursTk.description = item.description
-            )
-          }
-        )
       }
     )
   }
@@ -76,15 +69,6 @@ export class UsuarioFormComponent implements OnInit {
     this.usuarioService.deleteById(this.currentEntity.id).subscribe(
       ()=>{
         console.log("borrado");
-        this.currentEntity = {
-          id: 0,
-          nombre: "",
-          correo:"",
-          password:"",
-          enabled: true,
-          carreraId: 0,
-          usrtickets: []
-        };
       }
     )
   }
