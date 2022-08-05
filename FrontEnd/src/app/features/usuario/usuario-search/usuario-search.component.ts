@@ -9,7 +9,7 @@ import { UsuarioService } from '../usuario.service';
 export class UsuarioSearchComponent implements OnInit {
 
   constructor(
-    private usuarioService :UsuarioService
+    private usuarioService:UsuarioService
   ) { }
 
     usuarios:Usuario [] = [];

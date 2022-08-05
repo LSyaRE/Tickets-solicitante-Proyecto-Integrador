@@ -84,12 +84,11 @@ export class CarreraFormComponent implements OnInit {
       }
     )
   }
-
+ 
   deleteById():void{
     this.carreraService.deleteById(this.currentEntity.id).subscribe(
       () => {
-        console.log("Borrado");
-        //redireccionar ....
+        this.router.navigate(['/layout/carrera-list']);
       }
     )
   }

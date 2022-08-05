@@ -1,4 +1,4 @@
-import { Ticket } from "../ticket/ticket";
+import { Usuario } from "../usuario/usuario";
 
 export interface Respuesta {
     id:number,
@@ -8,5 +8,7 @@ export interface Respuesta {
     enabled: boolean,
     resuelto: boolean,
     respuestaId:number,
-    tickets:Ticket[]
+    usuarioId?:number,
+    usuarios:Usuario[]
+
 }

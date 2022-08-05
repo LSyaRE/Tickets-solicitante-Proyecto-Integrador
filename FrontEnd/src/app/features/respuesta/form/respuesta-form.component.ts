@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RespuestaService } from '../respuesta.service';
 import { Respuesta } from '../respuesta';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Ticket } from '../../ticket/ticket';
+import { Usuario } from '../../usuario/usuario';
+import { UsuarioService } from '../../usuario/usuario.service';
 
 @Component({
   selector: 'app-respuesta-form',
@@ -12,7 +14,9 @@ import { Ticket } from '../../ticket/ticket';
 export class RespuestaFormComponent implements OnInit {
 
   constructor( private respuestaService: RespuestaService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,
+    private usuarioService:UsuarioService,
+    private router:Router) { }
 
     currentEntity: Respuesta =
     {
@@ -23,7 +27,8 @@ export class RespuestaFormComponent implements OnInit {
       resuelto: false,
       idTicket:0,
       respuestaId:0,
-      tickets: []
+      usuarioId:0,
+      usuarios:[]
     };
 
 
@@ -53,50 +58,59 @@ export class RespuestaFormComponent implements OnInit {
         resuelto: false,
         idTicket:0,
         respuestaId:0,
-        tickets: []
+        usuarioId:0,
+        usuarios:[]
 
         };
       }
-    )
+      )
+      this.router.navigate(['/layout/respuesta-list']);
   }
 
-  findById(id: number):void {
-    this.respuestaService.findById(id).subscribe(
-      (response) => {
-        this.currentEntity = response;
-        this.currentEntity.tickets.forEach(
-          (respuesta) => {
-            this.respuestaService.findById(respuesta.id).subscribe(
-              (item) => respuesta.description = item.comentario
+  findById(id: number):void{
+    this.respuestaService.findById(id).subscribe( 
+      (response)=>{
+        this.currentEntity=response;
+        this.currentEntity.usuarios.forEach(
+          (user)=>{
+            this.usuarioService.findById(user.id).subscribe(
+              (item)=> user.nombre = item.nombre
             )
-          }
-        )
-      }
-    )
+            this.currentEntity.usuarios.forEach(
+
+              (user)=>{
+                this.usuarioService.findById(user.id).subscribe(
+                  (item)=>user.nombre = item.nombre)
+                }
+                )
+              }
+              );
+
+      })
   }
 
   deleteById():void{
     this.respuestaService.deleteById(this.currentEntity.id).subscribe(
       () => {
-        console.log("Borrado");
-        //redireccionar ....
+        this.router.navigate(['/layout/respuesta-list']);
+
       }
     )
   }
 
-  removeTicket(id: number):void {
-
-    this.currentEntity.tickets =
-    this.currentEntity.tickets.filter(
+  removeUsuario(id: number){
+    this.currentEntity.usuarios =
+    this.currentEntity.usuarios.filter(
       (item) => item.id != id
     );
   }
 
-  addTicket(ticket: Ticket){
-    ticket.ticketId = ticket.id;
-    this.currentEntity.tickets.push(
-      ticket
+  addUser(user: Usuario){
+    user.usuarioId = user.id;
+    this.currentEntity.usuarios.push(
+      user
     );
   }
+
 
 }
