@@ -10,7 +10,6 @@ import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
-import yavirac.ticket_solicitante.features.ticket.TicketRespuesta;
 
 @Data
 @Table("respuesta")
@@ -25,9 +24,11 @@ public class Respuesta {
     @Column("id_ticket")
     private int idTicket;
     private boolean resuelto;
+    private int usuarioId;
+
 
     @MappedCollection(idColumn = "respuesta_id")
-    private Set<TicketRespuesta> tickets = new HashSet<>();
+    private Set<RespuestaUsuario> usuarios = new HashSet<>();
 
 
 }
